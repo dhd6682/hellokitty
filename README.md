@@ -25,6 +25,7 @@
 이 기능은 두 개의 음성을 비교하여 같은 사람인지 확인하고, 특정 명령어(`"나비"`와 같은)가 포함되어 있는지 확인합니다.
 
 - **음성 임베딩**: `Resemblyzer`의 `VoiceEncoder`를 사용하여 음성 임베딩을 생성합니다.
+
 ![resemblyzer](https://github.com/user-attachments/assets/c45c5fa2-ff4b-4556-b596-29235567c407)
 - **음성 인식**: `SpeechRecognition` 라이브러리를 사용하여 한국어 음성을 텍스트로 변환하고 명령어를 인식합니다.
 
