@@ -14,7 +14,7 @@ app = FastAPI()
 encoder = VoiceEncoder()
 
 # 이미 지정된 파일 경로
-file1_path = Path(r"C:\Projects\Python_basic\최종프로젝트\나비.wav")
+file1_path = Path("audio/나비.wav")
 
 # 참조 음성 파일 전처리
 wav_1 = preprocess_wav(file1_path)
@@ -78,4 +78,4 @@ async def compare_voice(file2: UploadFile = File(...)):
     return result
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)

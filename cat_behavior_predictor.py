@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 import joblib
 
 # Load the augmented CSV file
-file_path = r'C:\Projects\Python_basic\최종프로젝트\Augmented_Cat_Personality_Traits_Data_Translated (1).csv'
+file_path = 'Augmented_Cat_Personality_Traits_Data_Translated (1).csv'
 cat_data = pd.read_csv(file_path)
 
 # Encoding the 'Item' column which contains categorical data
@@ -55,4 +55,5 @@ async def predict_behavior(input_data: CatTraitsInput):
     
     return {"predicted_behavior": predicted_behavior[0]}
 
-# Run the app with: uvicorn filename:app --reload
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

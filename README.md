@@ -4,10 +4,10 @@
 
 ## 주요 기능
 
-### 1. 🐱 고양이 행동 예측 (main3.py)
+### 1. 🐱 고양이 행동 예측 (cat_behavior_predictor.py)
    - 고양이의 다양한 성격 특성을 입력 받아 행동을 예측하는 모델입니다.
    - FastAPI를 이용해 REST API 엔드포인트로 제공됩니다.
-### 2. 🎤 음성 유사성 비교 및 명령어 인식 (main4.py)
+### 2. 🎤 음성 유사성 비교 및 명령어 인식 (voice_command_recognizer.py)
    - 사용자의 음성을 비교하여 두 음성이 같은 사람의 것인지 판단하고, 특정 명령어를 인식하는 기능을 제공합니다.
    - 음성 명령을 사용해 고양이와 상호작용하는 시나리오에 활용할 수 있습니다.
 
@@ -15,13 +15,13 @@
 
 ## 주요 기능 설명
 
-### 1. 고양이 행동 예측 모델 (main3.py)
+### 1. 고양이 행동 예측 모델 (cat_behavior_predictor.py)
 이 기능은 고양이의 성격 데이터를 기반으로 행동을 예측하는 **랜덤 포레스트 분류기**를 사용합니다. 데이터는 `LabelEncoder`로 인코딩되며, 모델은 `train_test_split`을 통해 학습 및 테스트 데이터를 나눠 학습됩니다.
 
 - **모델 학습**: `RandomForestClassifier`를 사용하여 고양이의 행동을 예측하는 모델을 학습시킵니다.
 - **API 엔드포인트**: `/predict-behavior/`를 통해 사용자가 성격 특성을 입력하면 예측된 행동을 반환합니다.
 
-### 2. 음성 유사성 비교 및 명령어 인식 (main4.py)
+### 2. 음성 유사성 비교 및 명령어 인식 (voice_command_recognizer.py)
 이 기능은 두 개의 음성을 비교하여 같은 사람인지 확인하고, 특정 명령어(`"나비"`와 같은)가 포함되어 있는지 확인합니다.
 
 - **음성 임베딩**: `Resemblyzer`의 `VoiceEncoder`를 사용하여 음성 임베딩을 생성합니다.
@@ -46,7 +46,23 @@
 
 
 ```bash
-pip install fastapi scikit-learn pandas numpy joblib resemblyzer speechrecognition uvicorn
+pip install -r requirements.txt
+```
+
+## 실행 방법
+
+### 1. 고양이 행동 예측 서버 (포트 8000)
+```bash
+python cat_behavior_predictor.py
+# 또는
+uvicorn cat_behavior_predictor:app --host 0.0.0.0 --port 8000
+```
+
+### 2. 음성 명령 인식 서버 (포트 8001)
+```bash
+python voice_command_recognizer.py
+# 또는
+uvicorn voice_command_recognizer:app --host 0.0.0.0 --port 8001
 ```
 
 ### 요청 값 예시
