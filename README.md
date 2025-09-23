@@ -35,7 +35,7 @@
 ## 설치 방법
 
 ### 요구 사항
-- Python 3.8+
+- **Python 3.8+** (requirements.txt는 Python 3.8 버전에 최적화됨)
 - FastAPI
 - scikit-learn
 - pandas, numpy
@@ -44,10 +44,13 @@
 - speechrecognition
 - uvicorn
 
-
+### 설치 방법
 ```bash
+# 패키지 설치
 pip install -r requirements.txt
 ```
+
+**참고**: requirements.txt는 Python 3.8 버전에 맞게 버전 제약이 설정되어 있습니다.
 
 ## 실행 방법
 
